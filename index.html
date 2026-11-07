@@ -166,28 +166,21 @@
     <!-- Floating Flower Petals Canvas Overlay -->
     <canvas id="petalCanvas" class="fixed inset-0 pointer-events-none z-30 no-print"></canvas>
 
-    <!-- Floating Top Controls (Customize Card & Temple Chime Sound) -->
-    <div class="fixed top-4 right-4 z-40 flex items-center gap-2.5 no-print">
-        <button id="soundToggleBtn" aria-label="ಗಂಟೆಯ ನಾದ (Toggle Temple Bell Chimes)" class="flex items-center justify-center w-10 h-10 rounded-full shadow-lg border border-amber-400/60 bg-slate-900/90 text-amber-300 hover:bg-slate-800 transition-all" title="ಮಂಗಳಕರ ಗಂಟೆಯ ನಾದ">
-            <svg id="soundOnIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
-            </svg>
-            <svg id="soundOffIcon" class="w-5 h-5 hidden text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15zM17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"/>
-            </svg>
-        </button>
-
-        <button id="openCustomizerBtn" class="flex items-center gap-2 px-4 py-2.5 rounded-full shadow-xl border border-amber-300/80 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 text-slate-950 font-bold text-xs sm:text-sm hover:scale-105 active:scale-95 transition-all">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
-            </svg>
-            <span>ವಿವರಗಳನ್ನು ಬದಲಿಸಿ (Edit)</span>
-        </button>
-    </div>
+    <!-- Discreet Corner Traditional Music Mute/Unmute Button -->
+    <button id="musicToggleBtn" aria-label="ಮಂಗಳ ವಾದ್ಯ ಸಂಗೀತ (Toggle Traditional Music)" class="fixed top-4 right-4 z-40 flex items-center justify-center w-10 h-10 rounded-full shadow-lg border border-amber-400/50 bg-slate-950/80 text-amber-300 hover:bg-slate-900 hover:scale-105 transition-all backdrop-blur-sm" title="ಮಂಗಳ ವಾದ್ಯ ಸಂಗೀತ (Traditional Music)">
+        <!-- Music Playing Icon -->
+        <svg id="musicOnIcon" class="w-5 h-5 hidden animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
+        </svg>
+        <!-- Music Muted/Paused Icon -->
+        <svg id="musicOffIcon" class="w-5 h-5 text-amber-300/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15zM17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"/>
+        </svg>
+    </button>
 
     <!-- MAIN VERTICAL ROYAL KANNADA INVITATION CARD -->
     <main class="w-full max-w-[550px] mx-auto my-auto z-10">
-        <article id="invitationCard" class="royal-zari-card rounded-[28px] overflow-hidden relative select-none">
+        <article id="invitationCard" class="royal-zari-card rounded-[28px] overflow-hidden relative select-none cursor-pointer">
 
             <!-- TOP HALF: Midnight Blue Celestial Palace with Toran, Hanging Bells & Glowing Cradle -->
             <div class="relative pt-3 pb-10 px-5 sm:px-8 mandala-bg">
@@ -441,13 +434,6 @@
                             <path d="M108,168 Q154,224 200,198 Q246,224 292,168" fill="none" stroke="#FEF9C3" stroke-width="5" stroke-linecap="round" stroke-dasharray="1 9"/>
                         </g>
                     </svg>
-
-                    <!-- Subtle Interactive Prompt in Kannada (Hidden on Print) -->
-                    <div class="text-center -mt-2 no-print">
-                        <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-medium bg-amber-400/15 border border-amber-300/40 text-amber-200 group-hover:bg-amber-400/25 transition">
-                            <span>🌸 ತೊಟ್ಟಿಲು ತೂಗಲು ಮತ್ತು ಹೂವಿನ ಮಳೆಗಾಗಿ ಇಲ್ಲಿ ಸ್ಪರ್ಶಿಸಿ</span>
-                        </span>
-                    </div>
                 </div>
             </div>
 
@@ -546,178 +532,248 @@
                         </p>
                     </div>
 
-                    <!-- Hosted By / Parents Block -->
-                    <div class="pt-2 space-y-1">
-                        <p class="text-xs text-amber-300/90 font-semibold">
-                            ತಂಗಳೂಟ / ಸ್ವಾಗತ ಕೋರುವವರು:
+                    <!-- Hosted By: Strictly ONLY "ಸ್ವಾಗತ ಕೋರುವವರು" -->
+                    <div class="pt-3 pb-1 space-y-1.5">
+                        <p class="text-xs sm:text-sm text-amber-300 font-bold tracking-wide">
+                            ಸ್ವಾಗತ ಕೋರುವವರು:
                         </p>
-                        <h2 id="displayParents" class="font-kannada-serif text-lg sm:text-xl font-bold gold-foil-text">
-                            ಶ್ರೀಮತಿ ಅನನ್ಯ ಮತ್ತು ಶ್ರೀ ಕಾರ್ತಿಕ್ ರಾವ್
+                        <h2 id="displayParents" class="font-kannada-serif text-lg sm:text-xl font-bold gold-foil-text leading-snug">
+                            ಶ್ರೀಮತಿ ಮತ್ತು ಶ್ರೀ ತಿಪ್ಪೇಶ್ ಶ್ರೀನಿವಾಸ್ ಹಾಗೂ ಕುಟುಂಬದವರು
                         </h2>
-                        <p id="displayFamilyCompliments" class="text-xs sm:text-sm text-amber-100/90 font-medium">
-                            ಹಾಗೂ ರಾವ್ ಮತ್ತು ಶರ್ಮಾ ಕುಟುಂಬದವರು
-                        </p>
                     </div>
-                </div>
-
-                <!-- Clean Utility Actions (Locate Venue & Print/Save Card - Hidden when printing) -->
-                <div class="relative z-10 pt-3 flex flex-wrap items-center justify-center gap-3 no-print">
-                    <a id="directionsLink" href="https://www.google.com/maps/search/?api=1&query=Aishwarya+Grand+Hall+JP+Nagar+Bengaluru" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-gradient-to-r from-amber-200 via-amber-300 to-yellow-200 text-red-950 shadow-lg hover:brightness-110 transition">
-                        <svg class="w-4 h-4 text-red-900 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
-                        </svg>
-                        <span>ಸ್ಥಳದ ನಕ್ಷೆ (Locate Venue)</span>
-                    </a>
-
-                    <button id="printCardBtn" type="button" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-amber-300/50 bg-white/10 text-amber-100 hover:bg-white/20 transition">
-                        <svg class="w-4 h-4 text-amber-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
-                        </svg>
-                        <span>ಕಾರ್ಡ್ ಮುದ್ರಿಸಿ / PDF ಉಳಿಸಿ</span>
-                    </button>
                 </div>
 
             </div>
         </article>
-
-        <!-- Mandatory Business Branding Footer -->
-        <footer class="mt-8 text-center space-y-2.5 px-2 no-print">
-            <div class="inline-flex flex-col sm:flex-row items-center gap-2.5 px-5 py-3 rounded-2xl border border-amber-500/30 bg-slate-900/85 backdrop-blur-md shadow-lg">
-                <span class="text-xs text-amber-100/95">
-                    © The Next-Gen Group | For similar custom web invitations, WhatsApp:
-                </span>
-                <a href="https://wa.me/918095117035?text=Hi!%20I%20saw%20the%20Kannada%20Namakarana%20Invitation%20Card%20and%20would%20like%20a%20custom%20digital%20invitation." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 to-yellow-300 hover:scale-105 transition">
-                    <span>📱 8095117035</span>
-                </a>
-            </div>
-        </footer>
     </main>
 
-    <!-- LIVE KANNADA CARD CUSTOMIZER DRAWER (No Baby Name Field) -->
-    <div id="customizerBackdrop" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 hidden opacity-0 transition-opacity duration-300 no-print"></div>
-    <aside id="customizerDrawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-slate-950 text-amber-50 border-l border-amber-500/30 shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col no-print">
-        <div class="p-5 border-b border-amber-500/20 flex items-center justify-between bg-gradient-to-r from-slate-900 to-red-950">
-            <div>
-                <h2 class="font-kannada-serif text-xl font-bold gold-foil-text">ವಿವರಗಳನ್ನು ಬದಲಿಸಿ (Edit Card)</h2>
-                <p class="text-xs text-amber-200/75">ಕನ್ನಡ ಅಥವಾ ಇಂಗ್ಲಿಷ್‌ನಲ್ಲಿ ವಿವರಗಳನ್ನು ಬದಲಾಯಿಸಿ</p>
-            </div>
-            <button id="closeCustomizerBtn" aria-label="Close Customizer" class="p-2 rounded-full hover:bg-white/10 text-amber-200 transition">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                </svg>
-            </button>
-        </div>
+    <!-- Subtle Ultra-Clean Bottom Edge Branding -->
+    <footer class="mt-4 text-center opacity-55 hover:opacity-95 transition-opacity text-[11px] text-amber-200/75 tracking-wide no-print">
+        © The Next-Gen Group | Custom Web Invitations - WhatsApp: <a href="https://wa.me/918095117035" target="_blank" rel="noopener noreferrer" class="underline hover:text-amber-300">8095117035</a>
+    </footer>
 
-        <div class="p-5 overflow-y-auto flex-1 space-y-4 text-xs">
-            <div>
-                <label class="block font-semibold text-amber-300 mb-1">ಮೇಲಿನ ಸಾಲು (Invocation)</label>
-                <input type="text" id="inputInvocation" value="॥ ಶ್ರೀರಸ್ತು ॥   ॥ ಶುಭಮಸ್ತು ॥   ॥ ಶ್ರೀ ಗಣಾಧಿಪತಯೇ ನಮಃ ॥" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-amber-500/40 text-white focus:outline-none focus:border-amber-400">
-            </div>
-
-            <div>
-                <label class="block font-semibold text-amber-300 mb-1">ರಾಜಕುಮಾರಿ ವಿಶೇಷ ಸಾಲು (Princess Badge)</label>
-                <input type="text" id="inputPrincessTag" value="ನಮ್ಮ ಮುದ್ದು ರಾಜಕುಮಾರಿ" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-amber-500/40 text-white focus:outline-none focus:border-amber-400">
-            </div>
-
-            <div>
-                <label class="block font-semibold text-amber-300 mb-1">ಆಮಂತ್ರಣ ಸಂದೇಶ (Invitation Message)</label>
-                <textarea id="inputInviteMessage" rows="3" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-amber-500/40 text-white focus:outline-none focus:border-amber-400">ನಮ್ಮ ಮನೆಯ ನಂದಾದೀಪ, ನಮ್ಮ ಮುದ್ದು ರಾಜಕುಮಾರಿಯ ನಾಮಕರಣ ಹಾಗೂ ತೊಟ್ಟಿಲು ಶಾಸ್ತ್ರದ ಶುಭ ಸಮಾರಂಭಕ್ಕೆ ತಾವು ಕುಟುಂಬ ಸಮೇತರಾಗಿ ಆಗಮಿಸಿ, ಮಗುವನ್ನು ಆಶೀರ್ವದಿಸಬೇಕಾಗಿ ಸವಿನಯ ಪ್ರಾರ್ಥನೆ.</textarea>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div>
-                    <label class="block font-semibold text-amber-300 mb-1">ದಿನಾಂಕ (Date)</label>
-                    <input type="text" id="inputDateLine" value="ಭಾನುವಾರ, ೨೨ ನವೆಂಬರ್ ೨೦೨೬" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-amber-500/40 text-white focus:outline-none focus:border-amber-400">
-                </div>
-                <div>
-                    <label class="block font-semibold text-amber-300 mb-1">ಶುಭ ಮುಹೂರ್ತ (Muhurtham)</label>
-                    <input type="text" id="inputTimeLine" value="ಬೆಳಿಗ್ಗೆ ೧೦:೩೦ ರಿಂದ ೧೧:೪೫ ರವರೆಗೆ" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-amber-500/40 text-white focus:outline-none focus:border-amber-400">
-                </div>
-            </div>
-
-            <div>
-                <label class="block font-semibold text-amber-300 mb-1">ಭೋಜನ ಸಮಯ (Lunch Time)</label>
-                <input type="text" id="inputLunchNote" value="ಮಧ್ಯಾಹ್ನ ೧೨:೩೦ ರಿಂದ" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-amber-500/40 text-white focus:outline-none focus:border-amber-400">
-            </div>
-
-            <div>
-                <label class="block font-semibold text-amber-300 mb-1">ಸ್ಥಳದ ಹೆಸರು (Venue Name)</label>
-                <input type="text" id="inputVenueName" value="ಐಶ್ವರ್ಯ ಗ್ರ್ಯಾಂಡ್ ಹಾಲ್, ಬೆಂಗಳೂರು" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-amber-500/40 text-white focus:outline-none focus:border-amber-400">
-            </div>
-
-            <div>
-                <label class="block font-semibold text-amber-300 mb-1">ವಿಳಾಸ (Venue Address)</label>
-                <input type="text" id="inputVenueAddress" value="ಕನಕಪುರ ಮುಖ್ಯ ರಸ್ತೆ, ಜೆ.ಪಿ. ನಗರ, ಬೆಂಗಳೂರು" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-amber-500/40 text-white focus:outline-none focus:border-amber-400">
-            </div>
-
-            <div>
-                <label class="block font-semibold text-amber-300 mb-1">ಪೋಷಕರ ಹೆಸರು (Parents' Names)</label>
-                <input type="text" id="inputParents" value="ಶ್ರೀಮತಿ ಅನನ್ಯ ಮತ್ತು ಶ್ರೀ ಕಾರ್ತಿಕ್ ರಾವ್" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-amber-500/40 text-white focus:outline-none focus:border-amber-400">
-            </div>
-
-            <div>
-                <label class="block font-semibold text-amber-300 mb-1">ಕುಟುಂಬದವರು (Family Compliments)</label>
-                <input type="text" id="inputFamilyCompliments" value="ಹಾಗೂ ರಾವ್ ಮತ್ತು ಶರ್ಮಾ ಕುಟುಂಬದವರು" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-amber-500/40 text-white focus:outline-none focus:border-amber-400">
-            </div>
-        </div>
-
-        <div class="p-4 border-t border-amber-500/20 bg-slate-900 flex items-center justify-between gap-3">
-            <button id="doneCustomizingBtn" class="w-full py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-950 shadow-md hover:brightness-110 transition">
-                ಉಳಿಸಿ ಮತ್ತು ಮುಚ್ಚಿ (Save &amp; Close)
-            </button>
-        </div>
-    </aside>
-
-    <!-- Interactive JavaScript for Web Audio Temple Chimes, Cradle Rocking, Marigold/Jasmine Petals & Live Editor -->
+    <!-- Interactive JavaScript for Traditional South Indian Carnatic Instrumental Music, Cradle Rocking & Marigold/Jasmine Petals -->
     <script>
         window.onload = function () {
             /* ============================================================
-               1. PURE WEB AUDIO API TEMPLE BELL & FLUTE CHIME SYNTHESIS
+               1. TRADITIONAL SOUTH INDIAN CARNATIC INSTRUMENTAL MUSIC
+                  (Tanpura Drone + Auspicious Mohanam Raga Flute/Veena Melody + Temple Bell)
                ============================================================ */
-            let soundEnabled = true;
+            let isMusicPlaying = false;
             let audioCtx = null;
+            let melodyTimer = null;
+            let tanpuraNodes = [];
 
-            function playTempleChime() {
-                if (!soundEnabled) return;
-                try {
-                    const AudioContext = window.AudioContext || window.webkitAudioContext;
-                    if (!audioCtx) audioCtx = new AudioContext();
-                    if (audioCtx.state === 'suspended') audioCtx.resume();
+            const musicToggleBtn = document.getElementById('musicToggleBtn');
+            const musicOnIcon = document.getElementById('musicOnIcon');
+            const musicOffIcon = document.getElementById('musicOffIcon');
 
-                    const now = audioCtx.currentTime;
-                    const frequencies = [659.25, 987.77, 1318.51, 1975.53]; // Auspicious E-major temple bell harmonics
+            // Carnatic Raga Mohanam / Hamsadhwani auspicious pentatonic notes (Base Sa = D4 ~ 293.66 Hz)
+            const ragaNotes = {
+                Sa_low: 146.83,
+                Pa_low: 220.00,
+                Sa: 293.66,   // D4
+                Ri: 329.63,   // E4
+                Ga: 369.99,   // F#4
+                Pa: 440.00,   // A4
+                Dha: 493.88,  // B4
+                Sa_high: 587.33, // D5
+                Ri_high: 659.25, // E5
+                Ga_high: 739.99  // F#5
+            };
 
-                    frequencies.forEach((freq, idx) => {
-                        const osc = audioCtx.createOscillator();
-                        const gain = audioCtx.createGain();
-                        osc.type = idx % 2 === 0 ? 'sine' : 'triangle';
-                        osc.frequency.setValueAtTime(freq, now + idx * 0.08);
+            // Traditional auspicious melodic phrases (Alapana / Mangala Vadyam style)
+            const melodySequence = [
+                { note: ragaNotes.Sa, dur: 0.7, bell: true },
+                { note: ragaNotes.Ri, dur: 0.5, bell: false },
+                { note: ragaNotes.Ga, dur: 0.9, bell: false },
+                { note: ragaNotes.Pa, dur: 0.8, bell: true },
+                { note: ragaNotes.Dha, dur: 0.6, bell: false },
+                { note: ragaNotes.Sa_high, dur: 1.2, bell: true },
+                { note: ragaNotes.Dha, dur: 0.6, bell: false },
+                { note: ragaNotes.Pa, dur: 0.9, bell: false },
+                { note: ragaNotes.Ga, dur: 0.6, bell: true },
+                { note: ragaNotes.Pa, dur: 0.6, bell: false },
+                { note: ragaNotes.Dha, dur: 0.7, bell: false },
+                { note: ragaNotes.Sa_high, dur: 0.8, bell: true },
+                { note: ragaNotes.Ri_high, dur: 0.6, bell: false },
+                { note: ragaNotes.Sa_high, dur: 1.1, bell: false },
+                { note: ragaNotes.Dha, dur: 0.6, bell: false },
+                { note: ragaNotes.Pa, dur: 0.8, bell: true },
+                { note: ragaNotes.Ga, dur: 0.7, bell: false },
+                { note: ragaNotes.Ri, dur: 0.6, bell: false },
+                { note: ragaNotes.Sa, dur: 1.3, bell: true }
+            ];
 
-                        gain.gain.setValueAtTime(0.001, now + idx * 0.08);
-                        gain.gain.exponentialRampToValueAtTime(0.08 / (idx + 1), now + idx * 0.08 + 0.02);
-                        gain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.08 + 1.8);
+            let currentStep = 0;
 
-                        osc.connect(gain);
-                        gain.connect(audioCtx.destination);
+            function initAudio() {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                if (!audioCtx) audioCtx = new AudioContext();
+                if (audioCtx.state === 'suspended') audioCtx.resume();
+            }
 
-                        osc.start(now + idx * 0.08);
-                        osc.stop(now + idx * 0.08 + 1.85);
-                    });
-                } catch (e) {
-                    // Ignore audio autoplay restrictions
+            // Soft continuous Tanpura Sruthi Drone (Sa - Pa - Sa)
+            function startTanpuraDrone() {
+                stopTanpuraDrone();
+                const droneFreqs = [ragaNotes.Sa_low, ragaNotes.Pa_low, ragaNotes.Sa];
+                droneFreqs.forEach((freq, idx) => {
+                    const osc = audioCtx.createOscillator();
+                    const filter = audioCtx.createBiquadFilter();
+                    const gain = audioCtx.createGain();
+
+                    osc.type = idx === 2 ? 'sine' : 'triangle';
+                    osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+                    filter.type = 'lowpass';
+                    filter.frequency.setValueAtTime(420, audioCtx.currentTime);
+
+                    gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+                    gain.gain.linearRampToValueAtTime(0.018, audioCtx.currentTime + 1.5);
+
+                    osc.connect(filter);
+                    filter.connect(gain);
+                    gain.connect(audioCtx.destination);
+
+                    osc.start();
+                    tanpuraNodes.push({ osc, gain });
+                });
+            }
+
+            function stopTanpuraDrone() {
+                tanpuraNodes.forEach(({ osc, gain }) => {
+                    try {
+                        gain.gain.linearRampToValueAtTime(0.0001, audioCtx.currentTime + 0.3);
+                        setTimeout(() => osc.stop(), 350);
+                    } catch (e) {}
+                });
+                tanpuraNodes = [];
+            }
+
+            // Play a single warm Carnatic Flute / Veena note with gentle Gamaka vibrato
+            function playCarnaticNote(freq, duration, withBell) {
+                if (!isMusicPlaying || !audioCtx) return;
+                const now = audioCtx.currentTime;
+
+                // Main Flute/Shehnai harmonic oscillator
+                const osc = audioCtx.createOscillator();
+                const subOsc = audioCtx.createOscillator();
+                const filter = audioCtx.createBiquadFilter();
+                const gain = audioCtx.createGain();
+
+                osc.type = 'triangle';
+                subOsc.type = 'sine';
+
+                // Gentle pitch glide (Gamaka) into the note
+                osc.frequency.setValueAtTime(freq * 0.985, now);
+                osc.frequency.exponentialRampToValueAtTime(freq, now + 0.12);
+
+                subOsc.frequency.setValueAtTime(freq * 2, now); // Soft octave harmonic
+
+                // Subtle vibrato LFO
+                const lfo = audioCtx.createOscillator();
+                const lfoGain = audioCtx.createGain();
+                lfo.frequency.value = 5.2;
+                lfoGain.gain.value = 2.2;
+                lfo.connect(lfoGain);
+                lfoGain.connect(osc.frequency);
+                lfo.start(now);
+                lfo.stop(now + duration);
+
+                filter.type = 'lowpass';
+                filter.frequency.setValueAtTime(1400, now);
+
+                gain.gain.setValueAtTime(0.001, now);
+                gain.gain.linearRampToValueAtTime(0.075, now + 0.12);
+                gain.gain.exponentialRampToValueAtTime(0.0008, now + duration);
+
+                const subGain = audioCtx.createGain();
+                subGain.gain.setValueAtTime(0.015, now);
+
+                osc.connect(filter);
+                subOsc.connect(subGain);
+                subGain.connect(filter);
+                filter.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                osc.start(now);
+                subOsc.start(now);
+                osc.stop(now + duration + 0.05);
+                subOsc.stop(now + duration + 0.05);
+
+                // Optional delicate Jalatarangam / Temple Bell chime on auspicious beats
+                if (withBell) {
+                    const bellOsc = audioCtx.createOscillator();
+                    const bellGain = audioCtx.createGain();
+                    bellOsc.type = 'sine';
+                    bellOsc.frequency.setValueAtTime(freq * 4, now);
+
+                    bellGain.gain.setValueAtTime(0.001, now);
+                    bellGain.gain.exponentialRampToValueAtTime(0.022, now + 0.02);
+                    bellGain.gain.exponentialRampToValueAtTime(0.0001, now + 1.4);
+
+                    bellOsc.connect(bellGain);
+                    bellGain.connect(audioCtx.destination);
+                    bellOsc.start(now);
+                    bellOsc.stop(now + 1.45);
                 }
             }
 
-            const soundToggleBtn = document.getElementById('soundToggleBtn');
-            const soundOnIcon = document.getElementById('soundOnIcon');
-            const soundOffIcon = document.getElementById('soundOffIcon');
+            function scheduleNextNote() {
+                if (!isMusicPlaying) return;
+                const item = melodySequence[currentStep];
+                playCarnaticNote(item.note, item.dur, item.bell);
+                currentStep = (currentStep + 1) % melodySequence.length;
+                melodyTimer = setTimeout(scheduleNextNote, item.dur * 950);
+            }
 
-            soundToggleBtn.addEventListener('click', () => {
-                soundEnabled = !soundEnabled;
-                soundOnIcon.classList.toggle('hidden', !soundEnabled);
-                soundOffIcon.classList.toggle('hidden', soundEnabled);
-                if (soundEnabled) playTempleChime();
+            function startTraditionalMusic() {
+                if (isMusicPlaying) return;
+                initAudio();
+                isMusicPlaying = true;
+                musicOnIcon.classList.remove('hidden');
+                musicOffIcon.classList.add('hidden');
+                startTanpuraDrone();
+                scheduleNextNote();
+            }
+
+            function stopTraditionalMusic() {
+                isMusicPlaying = false;
+                musicOnIcon.classList.add('hidden');
+                musicOffIcon.classList.remove('hidden');
+                if (melodyTimer) clearTimeout(melodyTimer);
+                stopTanpuraDrone();
+            }
+
+            musicToggleBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (isMusicPlaying) {
+                    stopTraditionalMusic();
+                } else {
+                    startTraditionalMusic();
+                }
             });
+
+            // Play a pleasant temple bell chime when rocking the cradle
+            function playCradleBellChime() {
+                try {
+                    initAudio();
+                    const now = audioCtx.currentTime;
+                    [587.33, 880.0, 1174.66, 1760.0].forEach((freq, idx) => {
+                        const osc = audioCtx.createOscillator();
+                        const gain = audioCtx.createGain();
+                        osc.type = 'sine';
+                        osc.frequency.setValueAtTime(freq, now + idx * 0.06);
+                        gain.gain.setValueAtTime(0.001, now + idx * 0.06);
+                        gain.gain.exponentialRampToValueAtTime(0.045 / (idx + 1), now + idx * 0.06 + 0.02);
+                        gain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.06 + 1.5);
+                        osc.connect(gain);
+                        gain.connect(audioCtx.destination);
+                        osc.start(now + idx * 0.06);
+                        osc.stop(now + idx * 0.06 + 1.55);
+                    });
+                } catch (e) {}
+            }
 
             /* ============================================================
                2. MARIGOLD & JASMINE PETAL SHOWER CANVAS
@@ -778,97 +834,29 @@
             animatePetals();
 
             /* ============================================================
-               3. INTERACTIVE CRADLE ROCKING
+               3. INTERACTIVE CRADLE ROCKING & AUTO-START MUSIC ON TAP
                ============================================================ */
-            const cradleInteractiveArea = document.getElementById('cradleInteractiveArea');
+            const invitationCard = document.getElementById('invitationCard');
             const cradleSwingGroup = document.getElementById('cradleSwingGroup');
 
-            function rockCradle() {
+            function rockCradleAndStartMusic() {
+                if (!isMusicPlaying) {
+                    startTraditionalMusic();
+                }
                 cradleSwingGroup.classList.remove('cradle-rocking');
-                void cradleSwingGroup.offsetWidth; // Force reflow
+                void cradleSwingGroup.offsetWidth;
                 cradleSwingGroup.classList.add('cradle-rocking');
-                spawnPetals(32);
-                playTempleChime();
+                spawnPetals(30);
+                playCradleBellChime();
                 setTimeout(() => {
                     cradleSwingGroup.classList.remove('cradle-rocking');
                 }, 2400);
             }
 
-            cradleInteractiveArea.addEventListener('click', rockCradle);
-            cradleInteractiveArea.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    rockCradle();
-                }
-            });
-
-            /* ============================================================
-               4. PRINT / SAVE AS PDF BUTTON
-               ============================================================ */
-            document.getElementById('printCardBtn').addEventListener('click', () => {
-                window.print();
-            });
-
-            /* ============================================================
-               5. LIVE CUSTOMIZER DRAWER LOGIC
-               ============================================================ */
-            const openCustomizerBtn = document.getElementById('openCustomizerBtn');
-            const closeCustomizerBtn = document.getElementById('closeCustomizerBtn');
-            const doneCustomizingBtn = document.getElementById('doneCustomizingBtn');
-            const customizerDrawer = document.getElementById('customizerDrawer');
-            const customizerBackdrop = document.getElementById('customizerBackdrop');
-
-            function toggleDrawer(show) {
-                if (show) {
-                    customizerBackdrop.classList.remove('hidden');
-                    setTimeout(() => customizerBackdrop.classList.remove('opacity-0'), 10);
-                    customizerDrawer.classList.remove('translate-x-full');
-                } else {
-                    customizerBackdrop.classList.add('opacity-0');
-                    customizerDrawer.classList.add('translate-x-full');
-                    setTimeout(() => customizerBackdrop.classList.add('hidden'), 300);
-                }
-            }
-
-            openCustomizerBtn.addEventListener('click', () => toggleDrawer(true));
-            closeCustomizerBtn.addEventListener('click', () => toggleDrawer(false));
-            doneCustomizingBtn.addEventListener('click', () => toggleDrawer(false));
-            customizerBackdrop.addEventListener('click', () => toggleDrawer(false));
-
-            // Live Two-Way Binding for Kannada Card Text Fields
-            const bindings = [
-                { input: 'inputInvocation', display: 'displayInvocation' },
-                { input: 'inputPrincessTag', display: 'displayPrincessTag' },
-                { input: 'inputInviteMessage', display: 'displayInviteMessage' },
-                { input: 'inputDateLine', display: 'displayDateLine' },
-                { input: 'inputTimeLine', display: 'displayTimeLine' },
-                { input: 'inputLunchNote', display: 'displayLunchNote' },
-                { input: 'inputVenueName', display: 'displayVenueName' },
-                { input: 'inputVenueAddress', display: 'displayVenueAddress' },
-                { input: 'inputParents', display: 'displayParents' },
-                { input: 'inputFamilyCompliments', display: 'displayFamilyCompliments' }
-            ];
-
-            bindings.forEach(({ input, display }) => {
-                const inputEl = document.getElementById(input);
-                const displayEl = document.getElementById(display);
-                if (inputEl && displayEl) {
-                    inputEl.addEventListener('input', () => {
-                        displayEl.textContent = inputEl.value;
-                        updateDirectionsUrl();
-                    });
-                }
-            });
-
-            function updateDirectionsUrl() {
-                const venue = document.getElementById('inputVenueName').value;
-                const address = document.getElementById('inputVenueAddress').value;
-                const query = encodeURIComponent(`${venue} ${address}`.trim());
-                document.getElementById('directionsLink').href = `https://www.google.com/maps/search/?api=1&query=${query}`;
-            }
+            invitationCard.addEventListener('click', rockCradleAndStartMusic);
 
             // Gentle welcome petal shower on load
-            setTimeout(() => spawnPetals(16), 400);
+            setTimeout(() => spawnPetals(18), 400);
         };
     </script>
 </body>
